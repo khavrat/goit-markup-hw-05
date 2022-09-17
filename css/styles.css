@@ -103,7 +103,8 @@ img {
     line-height: 1.14;
     letter-spacing: 0.02em;
     color: var(--prymary-text-color);
-    transition: fill, color 250ms var(--cubic-bezier);
+    transition: fill 250ms var(--cubic-bezier), 
+        color 250ms var(--cubic-bezier);
 }
 
 .current {
@@ -140,6 +141,7 @@ img {
 }
 
 .connect {
+    color: currentColor;
     vertical-align: middle;
     margin-right: 10px;
 }
@@ -195,7 +197,7 @@ img {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border: transparent;
     cursor: pointer;
-    transition: background-color 250ms var(--cubic-bezier)
+    transition: background-color 250ms var(--cubic-bezier);
 }
 
 .button:hover,
@@ -348,7 +350,8 @@ img {
     height: 44px;
     border-radius: 50%;  
     fill: var(--icon-color);
-    transition: background-color, fill 250ms var(--cubic-bezier);
+    transition: background-color 250ms var(--cubic-bezier), 
+        fill 250ms var(--cubic-bezier);
 } 
 
 .icon-network:hover,
@@ -381,7 +384,8 @@ img {
     border: 1px solid var(--icon-color);
     border-radius: 4px;
     fill: var(--icon-color);
-    transition: fill, border 250ms var(--cubic-bezier);
+    transition: fill 250ms var(--cubic-bezier),
+         border 250ms var(--cubic-bezier);
 }
 
 .icon-client:hover,
@@ -461,9 +465,9 @@ img {
     color: var(--prymary-text-color);
     background: var(--secondary-bg-color);
     box-shadow: none;
-    transition: color, background-color, box-shadow 
-        250ms var(--cubic-bezier);
-
+    transition: color 250ms var(--cubic-bezier),
+        background-color 250ms var(--cubic-bezier),
+        box-shadow 250ms var(--cubic-bezier);
 }
 
 .button.select:hover,
@@ -519,7 +523,7 @@ img {
 }
 
 .project-thumb::before {
-    display: inline-block;
+    display: block;
     content: " ";
     position: absolute;
     top: 0;
@@ -528,8 +532,9 @@ img {
     height: 100%;
     background-color: rgba(33, 150, 243, 0.9);
     opacity: 0;
-    transform: translateY(100%);
-    transition: transform 250ms var(--cubic-bezier);
+    transition: opacity 250ms var(--cubic-bezier),
+        transform 250ms var(--cubic-bezier);
+    transform: translateY(100%); 
 }
 
 .project-link:hover .project-thumb::before,
@@ -546,8 +551,10 @@ img {
     color: var(--primary-bg-color);
     padding: 63px 24px;
     opacity: 0;
-    transform: translateY(100%);
-    transition: transform 250ms var(--cubic-bezier);
+    transform: translateY(100%);  
+    transition: opacity 250ms var(--cubic-bezier),
+        transform 250ms var(--cubic-bezier)
+   
 }
 
 .project-link:hover .project-about,
@@ -557,7 +564,7 @@ img {
 }
 
 .project-link {
-    display: inline-block;
+    display: block;
     text-decoration: none;
     background-color: var(--primary-bg-color);
     transition: box-shadow 250ms var(--cubic-bezier);
@@ -601,29 +608,35 @@ img {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.2);
     opacity: 1;
-    transition: opacity 250ms var(--cubic-bezier);
+    transition: opacity 250ms var(--cubic-bezier), 
+        visibility 250ms var(--cubic-bezier);
 }
 
 .backdrop.is-hidden {
     opacity: 0;
     pointer-events: none;
+    visibility: hidden;
 }
 
 .backdrop.is-hidden .modal {
-    transform: translate(-50%, -50%) scale(1.2)
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, -50%) scale(1.2);
 }
 
 .modal {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(1);
-    transition: transform 250ms var(--cubic-bezier);
     min-width: 528px;
     min-height: 581px;
     background-color: var(--primary-bg-color);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 250ms var(--cubic-bezier), 
+        opacity 250ms var(--cubic-bezier), 
+        visibility 250ms var(--cubic-bezier);
 }
 
 .modal-close {
