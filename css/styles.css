@@ -222,7 +222,9 @@ img {
 }
 
 .icon-block {
-    padding: 25px 100px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 270px;
     height: 120px;
     background-color: var(--secondary-bg-color);
@@ -344,8 +346,9 @@ img {
 }
 
 .icon-network {
-    display: block;
-    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 44px;
     height: 44px;
     border-radius: 50%;  
@@ -376,9 +379,9 @@ img {
 }
 
 .icon-client {
-    display: inline-block;
-    text-align: center;
-    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 170px;
     height: 92px;
     border: 1px solid var(--icon-color);
@@ -494,8 +497,9 @@ img {
 }
 
 .icon-network-footer {
-    display: block;
-    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 44px;
     height: 44px;
     border-radius: 50%;  
@@ -618,12 +622,6 @@ img {
     visibility: hidden;
 }
 
-.backdrop.is-hidden .modal {
-    opacity: 0;
-    visibility: hidden;
-    transform: translate(-50%, -50%) scale(1.2);
-}
-
 .modal {
     position: absolute;
     top: 50%;
@@ -631,12 +629,21 @@ img {
     min-width: 528px;
     min-height: 581px;
     background-color: var(--primary-bg-color);
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 
+        0px 1px 1px rgba(0, 0, 0, 0.14), 
+        0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
+    opacity: 1;  
+    transform: translate(-50%, -50%) scale(1.2);
+    transition: transform 2250ms var(--cubic-bezier), 
+        opacity 2250ms var(--cubic-bezier),  
+        visibility 2250ms var(--cubic-bezier); 
+}
+
+.backdrop.is-hidden .modal {
+    opacity: 0; 
+    visibility: hidden; 
     transform: translate(-50%, -50%) scale(1);
-    transition: transform 250ms var(--cubic-bezier), 
-        opacity 250ms var(--cubic-bezier), 
-        visibility 250ms var(--cubic-bezier);
 }
 
 .modal-close {
